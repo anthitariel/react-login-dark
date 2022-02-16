@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-//import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -15,10 +14,10 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import InputAdornment from "@mui/material/InputAdornment";
 import InputLabel from "@mui/material/InputLabel";
 import Paper from "@mui/material/Paper";
-
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function CreateAccountForm() {
   const handleSubmit = (event) => {
@@ -171,6 +170,8 @@ export default function CreateAccountForm() {
             </FormGroup>
 
             <Button
+              component={RouterLink}
+              to="/BrowseTemplates"
               type="submit"
               variant="contained"
               size="medium"

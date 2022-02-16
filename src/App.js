@@ -1,12 +1,11 @@
 import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-//import SignIn from "./pages/SignIn";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
 import CreateAccount from "./pages/CreateAccount";
-//import BrowseTemplates from "./pages/BrowseTemplates";
-//import TabPanel from "./components/TabPanel";
-//import SignInForm from "./components/SignInForm";
-//import CreateAnAccount from "./components/CreateAnAccount";
+import BrowseTemplates from "./pages/BrowseTemplates";
 
 const theme = createTheme({
   palette: {
@@ -24,13 +23,24 @@ const theme = createTheme({
   },
 });
 
-const App = () => {
+export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <CreateAccount />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/CreateAccount" element={<CreateAccount />} />
+        <Route path="/BrowseTemplates" element={<BrowseTemplates />} />
+        <Route
+          path="*"
+          element={
+            <div style={{ textAlign: "center" }}>
+              <h1>404 Error - Page Not Found</h1>
+            </div>
+          }
+        />
+      </Routes>
     </ThemeProvider>
   );
-};
-
-export default App;
+}

@@ -7,16 +7,7 @@ import CreateAccountForm from "../components/CreateAccountForm";
 
 export default function CreateAccount() {
   return (
-    <Box
-      component="form"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        /*   background: "linear-gradient(to left top, #252436, #363744, #464553)", */
-        minHeight: "100vh",
-      }}
-    >
+    <div>
       <AppBar sx={{ background: "#2A2939" }}>
         <Toolbar>
           <Link href="#" underline="none">
@@ -25,7 +16,18 @@ export default function CreateAccount() {
         </Toolbar>
       </AppBar>
 
-      <CreateAccountForm />
-    </Box>
+      <Box
+        component="form"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          /*   background: "linear-gradient(to left top, #252436, #363744, #464553)", */
+          minHeight: "100vh",
+        }}
+      >
+        <CreateAccountForm />
+      </Box>
+    </div>
   );
 }

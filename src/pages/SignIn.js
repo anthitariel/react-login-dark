@@ -1,8 +1,5 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
-import { AppBar, Toolbar } from "@mui/material";
-import logo from "../images/logo.png";
 import SignInForm from "../components/SignInForm";
 
 export default function SignIn() {
@@ -17,14 +14,6 @@ export default function SignIn() {
         minHeight: "100vh",
       }}
     >
-      <AppBar sx={{ background: "#2A2939" }}>
-        <Toolbar>
-          <Link href="#" underline="none">
-            <img src={logo} alt="logo" />
-          </Link>
-        </Toolbar>
-      </AppBar>
-
       <SignInForm />
     </Box>
   );

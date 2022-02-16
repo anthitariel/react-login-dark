@@ -15,6 +15,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import InputAdornment from "@mui/material/InputAdornment";
 import InputLabel from "@mui/material/InputLabel";
 import Paper from "@mui/material/Paper";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function SignInForm() {
   const handleSubmit = (event) => {
@@ -91,6 +92,8 @@ export default function SignInForm() {
             </FormGroup>
 
             <Button
+              component={RouterLink}
+              to="/CreateAccount"
               type="submit"
               variant="contained"
               size="medium"
