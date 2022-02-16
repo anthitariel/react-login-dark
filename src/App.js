@@ -3,7 +3,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 //import SignIn from "./pages/SignIn";
 //import CreateAccount from "./pages/CreateAccount";
-import BrowseTemplates from "./pages/BrowseTemplates";
+//import BrowseTemplates from "./pages/BrowseTemplates";
+//import TabPanel from "./components/TabPanel";
+//import SignInForm from "./components/SignInForm";
+import CreateAnAccount from "./components/CreateAnAccount";
 
 const theme = createTheme({
   palette: {
@@ -25,7 +28,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowseTemplates />
+      <CreateAnAccount />
     </ThemeProvider>
   );
 };
