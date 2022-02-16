@@ -2,11 +2,11 @@ import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 //import SignIn from "./pages/SignIn";
-//import CreateAccount from "./pages/CreateAccount";
+import CreateAccount from "./pages/CreateAccount";
 //import BrowseTemplates from "./pages/BrowseTemplates";
 //import TabPanel from "./components/TabPanel";
 //import SignInForm from "./components/SignInForm";
-import CreateAnAccount from "./components/CreateAnAccount";
+//import CreateAnAccount from "./components/CreateAnAccount";
 
 const theme = createTheme({
   palette: {
@@ -28,7 +28,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <CreateAnAccount />
+      <CreateAccount />
     </ThemeProvider>
   );
 };

@@ -20,7 +20,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function SignInForm() {
+export default function CreateAccountForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -39,7 +39,8 @@ export default function SignInForm() {
           alignItems: "center",
           background: "#3D3D4B",
           borderRadius: 5,
-          p: 5,
+          mt: 3,
+          p: 1,
         }}
       >
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
@@ -163,7 +164,10 @@ export default function SignInForm() {
               }}
             />
             <FormGroup sx={{ mb: 2 }}>
-              <FormControlLabel control={<Checkbox />} label="I agree to" />
+              <FormControlLabel
+                control={<Checkbox />}
+                label="I agree to Terms and Privacy Policy"
+              />
             </FormGroup>
 
             <Button
@@ -173,7 +177,7 @@ export default function SignInForm() {
               fullWidth
               sx={{
                 mt: 3,
-                mb: 2,
+                mb: 3,
                 fontSize: 20,
                 p: 1.5,
                 textTransform: "capitalize",
@@ -182,7 +186,7 @@ export default function SignInForm() {
               Create an account
             </Button>
             <Grid container>
-              <Grid item xs sx={{ textAlign: "center", mb: 10 }}></Grid>
+              <Grid item xs sx={{ textAlign: "center" }}></Grid>
             </Grid>
           </DialogContent>
         </Box>
