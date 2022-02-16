@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import TabPanel from "../components/TabPanel";
+import { List, Button } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -186,6 +187,52 @@ export default function BrowseTemplates() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
+        <Box
+          component="form"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            /*   background: "linear-gradient(to left top, #252436, #363744, #464553)", */
+            minHeight: "100vh",
+          }}
+        >
+          <List
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Button
+              href="/Home"
+              variant="contained"
+              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+            >
+              Home page
+            </Button>
+            <Button
+              href="/SignIn"
+              variant="contained"
+              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+            >
+              Page 1.1 "Sign In"
+            </Button>
+            <Button
+              href="/CreateAccount"
+              variant="contained"
+              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+            >
+              Page 1.2 "Create an Account"
+            </Button>
+            <Button
+              href="/BrowseTemplates"
+              variant="contained"
+              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+            >
+              Page 2 "Browse Templates"
+            </Button>
+          </List>
+        </Box>
       </Main>
     </Box>
   );

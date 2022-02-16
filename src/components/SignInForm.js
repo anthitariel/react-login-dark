@@ -28,7 +28,7 @@ export default function SignInForm() {
   };
 
   return (
-    <Container component="main" sx={{ width: "40%" }}>
+    <Container component="main" sx={{ width: "80%" }}>
       <Paper
         sx={{
           display: "flex",

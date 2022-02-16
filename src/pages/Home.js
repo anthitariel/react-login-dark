@@ -2,8 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { AppBar, Toolbar } from "@mui/material";
 import logo from "../images/logo.png";
-import List from "@mui/material/List";
 import { Link } from "react-router-dom";
+import { List, Button } from "@mui/material";
 
 export default function Home() {
   return (
@@ -30,14 +30,36 @@ export default function Home() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            fontSize: "h5.fontSize",
           }}
         >
-          <Link underline="none" to="/SignIn">
+          <Button
+            href="/Home"
+            variant="contained"
+            sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+          >
+            Home page
+          </Button>
+          <Button
+            href="/SignIn"
+            variant="contained"
+            sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+          >
             Page 1.1 "Sign In"
-          </Link>
-          <Link to="/CreateAccount">Page 1.2 "Create an Account"</Link>
-          <Link to="/BrowseTemplates">Page 2 "Browse Templates"</Link>
+          </Button>
+          <Button
+            href="/CreateAccount"
+            variant="contained"
+            sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+          >
+            Page 1.2 "Create an Account"
+          </Button>
+          <Button
+            href="/BrowseTemplates"
+            variant="contained"
+            sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
+          >
+            Page 2 "Browse Templates"
+          </Button>
         </List>
       </Box>
     </div>

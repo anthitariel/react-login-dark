@@ -1,16 +1,16 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import { AppBar, Toolbar } from "@mui/material";
 import logo from "../images/logo.png";
 import CreateAccountForm from "../components/CreateAccountForm";
+import { Link } from "react-router-dom";
 
 export default function CreateAccount() {
   return (
     <div>
       <AppBar sx={{ background: "#2A2939" }}>
         <Toolbar>
-          <Link href="#" underline="none">
+          <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
         </Toolbar>
@@ -22,6 +22,7 @@ export default function CreateAccount() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          zIndex: 2,
           /*   background: "linear-gradient(to left top, #252436, #363744, #464553)", */
           minHeight: "100vh",
         }}
