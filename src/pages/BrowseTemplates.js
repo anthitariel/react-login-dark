@@ -204,7 +204,7 @@ export default function BrowseTemplates() {
             }}
           >
             <Button
-              href="/Home"
+              href="/"
               variant="contained"
               sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
             >
