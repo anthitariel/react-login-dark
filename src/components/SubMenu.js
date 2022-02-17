@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { List, ListItem } from "@mui/material";
 import { SubData } from "./SubData";
-import { Link } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "@mui/material";
 
 export default function SubMenu() {
@@ -28,9 +27,9 @@ export default function SubMenu() {
               {subnav &&
                 item.subNav.map((item, index) => {
                   return (
-                    <Link to={item.path} key={index}>
-                      <ListItem>{item.title}</ListItem>
-                    </Link>
+                    <ListItem button to={item.path} key={index}>
+                      {item.title}
+                    </ListItem>
                   );
                 })}
             </List>

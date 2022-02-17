@@ -14,7 +14,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import SubMenu from "../components/SubMenu";
 import { List, Button } from "@mui/material";
 import TabPanel from "../components/TabPanel";
 
@@ -183,7 +182,6 @@ export default function BrowseTemplates() {
           </IconButton>
         </DrawerHeader>
         <Divider />
-
         <TabPanel />
       </Drawer>
       <Main open={open}>

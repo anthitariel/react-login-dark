@@ -35,9 +35,7 @@ export default function App() {
         <Route
           path="*"
           element={
-            <div style={{ textAlign: "center" }}>
-              <h1>404 Error - Page Not Found</h1>
-            </div>
+            <h1 style={{ textAlign: "center" }}>404 Error - Page Not Found</h1>
           }
         />
       </Routes>

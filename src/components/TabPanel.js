@@ -1,70 +1,68 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import Collapse from "@mui/material/Collapse";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ExpandMoreIcon from "@mui/icons-material/ExpandLess";
 import { SubData } from "./SubData";
-import { Link } from "react-router-dom";
 
-function LinkTab(props) {
-  return (
-    <ListItem
-      button
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
-  );
+function hasChildren(item) {
+  const { items: children } = item;
+
+  if (children === undefined) {
+    return false;
+  }
+
+  if (children.constructor !== Array) {
+    return false;
+  }
+
+  if (children.length === 0) {
+    return false;
+  }
+
+  return true;
 }
 
 export default function TabPanel() {
-  const [value, setValue] = React.useState(0);
+  return SubData.map((item, key) => <MenuItem key={key} item={item} />);
+}
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+const MenuItem = ({ item }) => {
+  const Component = hasChildren(item) ? MultiLevel : SingleLevel;
+  return <Component item={item} />;
+};
+
+const SingleLevel = ({ item }) => {
+  return (
+    <ListItem button>
+      <ListItemIcon>{item.icon}</ListItemIcon>
+      <ListItemText primary={item.title} />
+    </ListItem>
+  );
+};
+
+const MultiLevel = ({ item }) => {
+  const { items: children } = item;
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen((prev) => !prev);
   };
-  const [subnav, setSubnav] = useState(false);
-  const showSubnav = () => setSubnav(!subnav);
 
   return (
-    <Box>
-      <Typography paragraph>Pages</Typography>
-      <Typography paragraph>Components</Typography>
-
-      <List value={value} onChange={handleChange}>
-        {SubData.map((item, index) => {
-          return (
-            <nav>
-              <LinkTab key={index} onClick={item.subNav && showSubnav}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText primary={item.title} />
-                <ListItemIcon>
-                  {item.subNav && subnav
-                    ? item.iconOpened
-                    : item.subNav
-                    ? item.iconClosed
-                    : null}
-                </ListItemIcon>
-              </LinkTab>
-              <List>
-                {subnav &&
-                  item.subNav.map((item, index) => {
-                    return (
-                      <LinkTab>
-                        <Link to={item.path} key={index}>
-                          {item.title}
-                        </Link>
-                      </LinkTab>
-                    );
-                  })}
-              </List>
-            </nav>
-          );
-        })}
-      </List>
-    </Box>
+    <React.Fragment>
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>{item.icon}</ListItemIcon>
+        <ListItemText primary={item.title} />
+        {open ? <ExpandMoreIcon /> : <ChevronRightIcon />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {children.map((child, key) => (
+            <MenuItem key={key} item={child} />
+          ))}
+        </List>
+      </Collapse>
+    </React.Fragment>
   );
-}
+};
