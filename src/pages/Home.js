@@ -22,7 +22,8 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          /*   background: "linear-gradient(to left top, #252436, #363744, #464553)", */
+          background:
+            "linear-gradient(to right bottom, #111, #363744, #464553)",
           minHeight: "100vh",
         }}
       >
