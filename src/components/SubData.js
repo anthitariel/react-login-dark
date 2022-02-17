@@ -23,140 +23,110 @@ export const SubData = [
     ],
   },
   {
-    title: "Login2",
+    title: "Login",
     icon: <AccountCircle />,
-    iconClosed: <ChevronRightIcon />,
-    iconOpened: <ExpandLessIcon />,
     items: [
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
-      },
-    ],
-  },
-  {
-    title: "Login3",
-    icon: <AccountCircle />,
-    iconClosed: <ChevronRightIcon />,
-    iconOpened: <ExpandLessIcon />,
-    items: [
-      {
-        title: "Template 1",
-        path: "/home",
-        icon: <ChevronRightIcon />,
-      },
-      {
-        title: "Template 1",
-        path: "/home",
-        icon: <ChevronRightIcon />,
-      },
-      {
-        title: "Template 1",
-        path: "/home",
-        icon: <ChevronRightIcon />,
       },
     ],
   },
   {
     title: "Login",
     icon: <AccountCircle />,
-    iconClosed: <ChevronRightIcon />,
-    iconOpened: <ExpandLessIcon />,
     items: [
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
     ],
   },
   {
     title: "Login",
     icon: <AccountCircle />,
-    iconClosed: <ChevronRightIcon />,
-    iconOpened: <ExpandLessIcon />,
     items: [
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
     ],
   },
   {
     title: "Login",
     icon: <AccountCircle />,
-    iconClosed: <ChevronRightIcon />,
-    iconOpened: <ExpandLessIcon />,
     items: [
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
     ],
   },
   {
     title: "Login",
     icon: <AccountCircle />,
-    iconClosed: <ChevronRightIcon />,
-    iconOpened: <ExpandLessIcon />,
     items: [
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
       },
       {
         title: "Template 1",
         path: "/home",
-        icon: <ChevronRightIcon />,
+      },
+    ],
+  },
+  {
+    title: "Login",
+    icon: <AccountCircle />,
+    items: [
+      {
+        title: "Template 1",
+        path: "/home",
+      },
+      {
+        title: "Template 1",
+        path: "/home",
+      },
+      {
+        title: "Template 1",
+        path: "/home",
       },
     ],
   },
