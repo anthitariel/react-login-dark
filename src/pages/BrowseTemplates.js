@@ -14,8 +14,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { List, Button } from "@mui/material";
+//import { List, Button } from "@mui/material";
 import TabPanel from "../components/TabPanel";
+//import SubMenu from "../components/SubMenu";
+import Home from "./Home";
 
 const drawerWidth = 240;
 
@@ -45,6 +47,7 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: `${drawerWidth}px`,
@@ -61,6 +64,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
   justifyContent: "flex-end",
+  height: 80,
 }));
 
 const Search = styled("div")(({ theme }) => ({
@@ -130,16 +134,19 @@ export default function BrowseTemplates() {
           >
             <ChevronRightIcon />
           </IconButton>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
+          <Box sx={{ flexGrow: 1 }} />
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
             <IconButton size="large" color="inherit">
               <NotificationsIcon />
             </IconButton>
@@ -186,52 +193,7 @@ export default function BrowseTemplates() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Box
-          component="form"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            /*   background: "linear-gradient(to left top, #252436, #363744, #464553)", */
-            minHeight: "100vh",
-          }}
-        >
-          <List
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Button
-              href="/"
-              variant="contained"
-              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
-            >
-              Home page
-            </Button>
-            <Button
-              href="/SignIn"
-              variant="contained"
-              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
-            >
-              Page 1.1 "Sign In"
-            </Button>
-            <Button
-              href="/CreateAccount"
-              variant="contained"
-              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
-            >
-              Page 1.2 "Create an Account"
-            </Button>
-            <Button
-              href="/BrowseTemplates"
-              variant="contained"
-              sx={{ p: 0.5, m: 2, fontSize: "h6.fontSize" }}
-            >
-              Page 2 "Browse Templates"
-            </Button>
-          </List>
-        </Box>
+        <Home />
       </Main>
     </Box>
   );

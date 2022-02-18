@@ -2,7 +2,6 @@ import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import CreateAccount from "./pages/CreateAccount";
 import BrowseTemplates from "./pages/BrowseTemplates";
@@ -18,7 +17,15 @@ const theme = createTheme({
     },
     background: {
       default: "#2A2939",
-      paper: "#3D3E4B",
+    },
+  },
+  components: {
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          height: 80,
+        },
+      },
     },
   },
 });
@@ -28,7 +35,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<BrowseTemplates />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/CreateAccount" element={<CreateAccount />} />
         <Route path="/BrowseTemplates" element={<BrowseTemplates />} />

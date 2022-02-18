@@ -1,6 +1,4 @@
 import * as React from "react";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
 export const SubData = [
@@ -23,7 +21,7 @@ export const SubData = [
     ],
   },
   {
-    title: "Login",
+    title: "Registration",
     icon: <AccountCircle />,
     items: [
       {
@@ -41,7 +39,7 @@ export const SubData = [
     ],
   },
   {
-    title: "Login",
+    title: "Forgot password",
     icon: <AccountCircle />,
     items: [
       {
