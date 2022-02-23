@@ -21,7 +21,7 @@ export default function CreateAccount() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item component="form" xs={6}>
+        <Grid item component="form">
           <CreateAccountForm />
         </Grid>
       </Grid>

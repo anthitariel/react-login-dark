@@ -2,8 +2,7 @@ import * as React from "react";
 import SignInForm from "../components/SignInForm";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
-import { Paper } from "@mui/material";
-import { Grid } from "@mui/material";
+import { Paper, Grid } from "@mui/material";
 
 export default function SignIn() {
   return (
@@ -22,7 +21,7 @@ export default function SignIn() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item component="form" xs={6}>
+        <Grid item component="form">
           <SignInForm />
         </Grid>
       </Grid>

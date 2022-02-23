@@ -40,7 +40,7 @@ export default function SignInForm() {
         }}
       >
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <DialogContent maxWidth="xs">
+          <DialogContent minwidth="xs">
             <DialogTitle sx={{ fontSize: "h3.fontSize", p: 0 }}>
               Sign In
             </DialogTitle>
