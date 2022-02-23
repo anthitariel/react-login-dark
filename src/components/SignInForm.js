@@ -28,7 +28,7 @@ export default function SignInForm() {
   };
 
   return (
-    <Container component="main" sx={{ width: "80%" }}>
+    <Container component="main" maxWidth="sm">
       <Paper
         sx={{
           display: "flex",
@@ -40,7 +40,7 @@ export default function SignInForm() {
         }}
       >
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <DialogContent minwidth="xs">
+          <DialogContent>
             <DialogTitle sx={{ fontSize: "h3.fontSize", p: 0 }}>
               Sign In
             </DialogTitle>

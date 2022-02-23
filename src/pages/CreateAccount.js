@@ -2,7 +2,8 @@ import * as React from "react";
 import logo from "../images/logo.png";
 import CreateAccountForm from "../components/CreateAccountForm";
 import { Link } from "react-router-dom";
-import { Paper, Grid } from "@mui/material";
+import { Paper } from "@mui/material";
+import { Box } from "@mui/material";
 
 export default function CreateAccount() {
   return (
@@ -15,16 +16,14 @@ export default function CreateAccount() {
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-      <Grid
+      <Box
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item component="form">
-          <CreateAccountForm />
-        </Grid>
-      </Grid>
+        <CreateAccountForm />
+      </Box>
     </Paper>
   );
 }

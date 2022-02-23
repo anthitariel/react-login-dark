@@ -30,7 +30,7 @@ export default function CreateAccountForm() {
   };
 
   return (
-    <Container component="main" sx={{ width: "80%" }}>
+    <Container component="main" maxWidth="lg">
       <Paper
         sx={{
           display: "flex",
@@ -41,9 +41,10 @@ export default function CreateAccountForm() {
           mt: 3,
           p: 1,
         }}
+        maxWidth="xs"
       >
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <DialogContent maxWidth="xs">
+          <DialogContent>
             <DialogTitle sx={{ fontSize: "h3.fontSize", p: 0 }}>
               Create an account
             </DialogTitle>
