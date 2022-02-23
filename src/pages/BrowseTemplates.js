@@ -1,11 +1,10 @@
 import * as React from "react";
-import { styled, useTheme, alpha } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Divider from "@mui/material/Divider";
+import { Toolbar, Divider } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -14,10 +13,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-//import { List, Button } from "@mui/material";
 import TabPanel from "../components/TabPanel";
-//import SubMenu from "../components/SubMenu";
 import Home from "./Home";
+import { Link } from "react-router-dom";
+import logo from "../images/logo.png";
+import { Stack } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -63,42 +63,30 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  justifyContent: "flex-end",
+  justifyContent: "space-between",
   height: 80,
 }));
 
 const Search = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
+  borderRadius: 10,
+  border: "1px solid #73737B",
+  color: "#73737B",
+  background: "#232334",
+  paddingLeft: 20,
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
     width: "auto",
   },
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
+    padding: 10,
+    minWidth: 200,
+    fontSize: 20,
     [theme.breakpoints.up("sm")]: {
       width: "12ch",
       "&:focus": {
@@ -139,11 +127,9 @@ export default function BrowseTemplates() {
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
+              <SearchIcon />
               <StyledInputBase
-                placeholder="Search…"
+                placeholder="Type to search…"
                 inputProps={{ "aria-label": "search" }}
               />
             </Search>
@@ -171,7 +157,7 @@ export default function BrowseTemplates() {
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            width: drawerWidth,
+            minWidth: 300,
             boxSizing: "border-box",
           },
         }}
@@ -180,13 +166,34 @@ export default function BrowseTemplates() {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
+          <div>
+            <Stack direction="row" alignItems="center" gap={1}>
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
+              <Link
+                to="/"
+                style={{
+                  color: "#AFBCD4",
+                  fontSize: 30,
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                }}
+              >
+                techstrap
+              </Link>
+            </Stack>
+          </div>
+
+          <div>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "ltr" ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )}
+            </IconButton>
+          </div>
         </DrawerHeader>
         <Divider />
         <TabPanel />

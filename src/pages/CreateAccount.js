@@ -1,31 +1,30 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import logo from "../images/logo.png";
 import CreateAccountForm from "../components/CreateAccountForm";
 import { Link } from "react-router-dom";
+import { Paper, Grid } from "@mui/material";
 
 export default function CreateAccount() {
   return (
-    <div>
+    <Paper
+      style={{
+        background: "linear-gradient(to right bottom, #111, #363744, #464553)",
+        minHeight: "100vh",
+      }}
+    >
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-
-      <Box
-        component="form"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          zIndex: 2,
-          background:
-            "linear-gradient(to right bottom, #111, #363744, #464553)",
-          minHeight: "100vh",
-        }}
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
       >
-        <CreateAccountForm />
-      </Box>
-      <Link to="/">dfdgf</Link>
-    </div>
+        <Grid item component="form" xs={6}>
+          <CreateAccountForm />
+        </Grid>
+      </Grid>
+    </Paper>
   );
 }
